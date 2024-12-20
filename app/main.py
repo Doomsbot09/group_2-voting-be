@@ -21,9 +21,18 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
+# AWS CONFIG
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_REGION = os.getenv('AWS_DEFAULT_REGION')
 
 # DynamoDB Configuration
-dynamodb = boto3.resource("dynamodb", region_name="ap-east-1")
+dynamodb = boto3.resource(
+    "dynamodb", 
+    region_name=AWS_REGION,
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+)
 TABLE_NAME = "group-two-dev-poll"
 table = dynamodb.Table(TABLE_NAME)
 
