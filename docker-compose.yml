@@ -10,6 +10,6 @@ services:
       - ./app:/app
     environment:
       - CORS_ORIGINS=http://localhost:3000
-      - AWS_ACCESS_KEY_ID=AKIA4XN4ORLBAK6IRIN4
-      - AWS_SECRET_ACCESS_KEY=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
-      - AWS_DEFAULT_REGION=ap-east-1
+      - AWS_ACCESS_KEY_ID=AAK
+      - AWS_SECRET_ACCESS_KEY=ASA
+      - AWS_DEFAULT_REGION=ADR
